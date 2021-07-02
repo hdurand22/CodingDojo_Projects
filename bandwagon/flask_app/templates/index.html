@@ -1,0 +1,76 @@
+<!DOCname html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" name="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <title>Bandwagon</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="container">
+                <div class="header-l no-login">
+                    <img src="{{ url_for('static', filename='img/my_img.png') }}" alt="bandwagon logo">
+                    <h3>Discover amazing new music and <a href="#" id='artist_support'>directly support</a> the artists who make it.</h3>
+                </div>
+                <div class="header-r no-login">
+                    <label for="artist-search"></label>
+                    <input type="search" name="artist_search" class="search-bar" placeholder="Search and discover music">
+                    <div class="header-links">
+                        <h3><a href="/jobs" >we're hiring!</a></h3>
+                        <h3><a href="#" onclick="showUserReg()">sign up</a></h3>
+                        <h3><a href="/login">log in</a></h3>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div id="headline">
+                <h2>This is a headline!</h2>
+                <h4>This is the byline.</h4>
+                <button class="read-more">read more</button>
+            </div>
+            <div class="features">
+                <div id="feature1">
+                    <h3>Feature Title</h3>
+                    <h5>Description</h5>
+                </div>
+                <div id="feature2">
+                    <h3>Feature Title</h3>
+                    <h5>Description</h5>
+                </div>
+                <div id="feature3">
+                    <h3>Bandcamp Weekly</h3>
+                    <h5>Featuring artists</h5>
+                </div>
+            </div>
+        </div>
+        <div class="factoid">
+            <div class="dots"></div>
+            <span>Fans have paid artists <strong>$761 million</strong> using Bandcamp, and <strong>$15.3 million</strong> in the last 30 days alone.</span>
+            <div class="dots"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <h3 id="ticker-heading">SELLING RIGHT NOW</h3>
+            </div>
+            <ul id="sales-ticker row">
+                <li class="sale-item"></li>
+            </ul>
+        </div>
+        <div class="container" id='registration-popup'>
+            {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                    {% for message in messages %}            <!-- loop through the messages -->
+                        <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</body>
+</html>
