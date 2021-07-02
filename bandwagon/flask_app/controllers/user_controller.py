@@ -43,12 +43,12 @@ def user_login():
 
     return redirect('/success')
 
-@app.route('/success')
-def show_result():
-    if 'uuid' not in session:
-        return redirect('/')
+@app.route('/sign_in')
+def show_sign_in():
+    # if 'uuid' not in session:
+    #     return redirect('/')
 
-    return render_template('success.html')
+    return render_template('sign_in.html')
 
 @app.route('/logout')
 def logout():

@@ -45,3 +45,15 @@ const handleUserRegistration = (e)  => {
     
         .catch(err)
 }
+
+const handleLogin = (e) => {
+    console.log("e: ", e);
+
+    let form = new FormData(e);
+
+    fetch('http://localhost:5000/login', {method: 'POST', body: form})
+        .then(response => response.json())
+        .then(data => console.log('data: ',data))
+    
+        .catch(err)
+}

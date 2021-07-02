@@ -11,30 +11,14 @@
 </head>
 <body>
     <div class="container">
-        <form id="user_registration" method="post">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">First Name: </label>
-                <input type="text" name="first_name" class="form-control" id="exampleFormControlInput1">
+        <header>
+            <div class="header-l no-login">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='img/my_img.png') }}" alt="bandwagon logo">
+                </a>
             </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Last Name: </label>
-                <input type="text" name="last_name" class="form-control" id="exampleFormControlInput1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email: </label>
-                <input type="text" name="email" class="form-control" id="exampleFormControlInput1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Password: </label>
-                <input type="password" name="password" class="form-control" id="exampleFormControlInput1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Confirm Password: </label>
-                <input type="password" name="confirm_password" class="form-control" id="exampleFormControlInput1">
-            </div>
-            <button class="btn btn-primary btn-lg">Register</button>
-        </form>
-        <form action="/login" method="post">
+        </header>
+        <form id="user-login" method="post" onsubmit = "event.preventDefault(); handleLogin(this);">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email: </label>
                 <input type="text" name="email" class="form-control" id="exampleFormControlInput1">
